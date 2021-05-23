@@ -12,8 +12,11 @@ ENV WEB_DOCUMENT_ROOT=${APP_PATH}/public \
 # I/O on filesystem is very slow in Windows / Mac, so we increase this value
 ENV php.realpath_cache_ttl=7200
 
-RUN apt-get update && apt-get install -y default-mysql-client curl less vim
+# @see https://stackoverflow.com/questions/48162574/how-to-circumvent-apt-key-output-should-not-be-parsed
+ARG APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1
 
-COPY install.sh install.sh
+# Add PPAs
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash
 
-RUN chmod u+x install.sh && ./install.sh
+# Install dependencies
+RUN apt-get update && apt-get install -y default-mysql-client curl less vim nodejs npm

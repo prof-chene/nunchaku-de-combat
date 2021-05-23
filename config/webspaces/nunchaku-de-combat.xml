@@ -14,7 +14,7 @@
     </localizations>
 
     <default-templates>
-        <default-template type="page">default</default-template>
+        <default-template type="page">homepage</default-template>
         <default-template type="home">homepage</default-template>
     </default-templates>
 
@@ -28,8 +28,8 @@
         <contexts>
             <context key="main">
                 <meta>
-                    <title lang="en">Main Navigation</title>
-                    <title lang="de">Hauptnavigation</title>
+                    <title lang="fr">Menu</title>
+                    <title lang="en">Menu</title>
                 </meta>
             </context>
         </contexts>
